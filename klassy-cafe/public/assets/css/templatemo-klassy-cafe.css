@@ -263,6 +263,14 @@ header
   transition: all 0.3s ease 0s;
 }
 
+.header-area .main-nav .logo {
+  margin-top: 23px;
+}
+
+.background-header .main-nav .logo {
+  margin-top: 12px;
+}
+
 .background-header .main-nav .logo {
   line-height: 75px;
 }
@@ -295,8 +303,8 @@ header
 
 .header-area .main-nav .nav li a {
   display: block;
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 16px;
   color: #2a2a2a;
   text-transform: capitalize;
   -webkit-transition: all 0.3s ease 0s;
@@ -306,7 +314,7 @@ header
   height: 40px;
   line-height: 40px;
   border: transparent;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
 }
 
 .header-area .main-nav .nav li a {
@@ -332,11 +340,17 @@ header
 .header-area .main-nav .nav li.submenu:after {
   font-family: FontAwesome;
   content: "\f107";
-  font-size: 12px;
+  font-size: 18px;
   color: #2a2a2a;
   position: absolute;
-  right: 18px;
-  top: 12px;
+  right: 12px;
+  top: 7px;
+  transition: 0.3s;
+}
+
+.header-area .main-nav .nav li.submenu:hover:after {
+  color: #fb5849;
+  transform: rotate(180deg);
 }
 
 .background-header .main-nav .nav li.submenu:after {
@@ -375,7 +389,7 @@ header
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   position: relative;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
   border-bottom: 1px solid #eee;
 }
@@ -902,13 +916,13 @@ menu
 ---------------------------------------------
 */
 
-#menu {
+#menus {
   margin-top: 120px;
   background-color: #fffafa;
   padding: 120px 0px;
 }
 
-#menu .section-heading {
+#menus .section-heading {
   margin-bottom: 80px;
 }
 
@@ -967,7 +981,7 @@ menu
   color: #fff;
 }
 
-#menu .price h6 {
+#menus .price h6 {
   position: absolute;
   width: 70px;
   height: 70px;
@@ -980,17 +994,17 @@ menu
   line-height: 70px;
 }
 
-#menu .card .main-text-button {
+#menus .card .main-text-button {
   margin-left: 30px;
   margin-top: 20px;
   padding-bottom: 30px;
 }
 
-#menu .owl-menu-item {
+#menus .owl-menu-item {
   position: relative;
 }
 
-#menu .owl-nav {
+#menus .owl-nav {
   text-align: center;
   position: absolute;
   width: 100%;
@@ -998,21 +1012,21 @@ menu
   transform: translateY(5px);
 }
 
-#menu .owl-dots {
+#menus .owl-dots {
   display: none;
 }
     
-#menu .owl-nav .owl-prev{
+#menus .owl-nav .owl-prev{
   margin-right: 10px;
   outline: none;
 }
 
-#menu .owl-nav .owl-prev span,
-#menu .owl-nav .owl-next span {
+#menus .owl-nav .owl-prev span,
+#menus .owl-nav .owl-next span {
   opacity: 0;
 }
 
-#menu .owl-nav .owl-prev:before {
+#menus .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
   color: #fb5849;
@@ -1021,30 +1035,30 @@ menu
   content: '\f104';
 }
 
-#menu .owl-nav .owl-prev {
+#menus .owl-nav .owl-prev {
   opacity: 0.75;
   transition: all .5s;
 }
 
-#menu .owl-nav .owl-prev:hover {
+#menus .owl-nav .owl-prev:hover {
   opacity: 1;
 }
 
-#menu .owl-nav .owl-next {
+#menus .owl-nav .owl-next {
   opacity: 0.75;
   transition: all .5s;
 }
 
-#menu .owl-nav .owl-next:hover {
+#menus .owl-nav .owl-next:hover {
   opacity: 1;
 }
 
-#menu .owl-nav .owl-next{
+#menus .owl-nav .owl-next{
   margin-left: 10px;
   outline: none;
 }
 
-#menu .owl-nav .owl-next:before {
+#menus .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
   color: #fb5849;
@@ -1341,6 +1355,10 @@ reservation
   color: #2a2a2a;
 }
 
+form div#filterDate2 {
+  margin-bottom: 15px;
+}
+
 /*
 ---------------------------------------------
 offers
@@ -1474,7 +1492,6 @@ footer {
 }
 
 footer .left-text-content p {
-  margin-top: 5px;
   color: #fff;
   font-size: 14px;
   text-align: right;
@@ -1490,7 +1507,6 @@ footer .right-text-content p {
 
 footer .right-text-content {
   text-align: left;
-  margin-top: 10px;
 }
 
 footer .logo {

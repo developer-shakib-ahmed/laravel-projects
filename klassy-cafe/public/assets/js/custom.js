@@ -135,7 +135,7 @@
 	});
 
 	$(document).ready(function () {
-	    $(document).on("scroll", onScroll);
+	    // $(document).on("scroll", onScroll);
 	    
 	    //smoothscroll
 	    $('.scroll-to-section a[href^="#"]').on('click', function (e) {
@@ -153,8 +153,8 @@
 			$('html, body').stop().animate({
 				scrollTop: (target.offset().top) - 79
 			}, 500, 'swing', function () {
-				window.location.hash = target;
-				$(document).on("scroll", onScroll);
+				window.location.hash = target.selector;
+				// $(document).on("scroll", onScroll);
 			});
 	        
 	    });
