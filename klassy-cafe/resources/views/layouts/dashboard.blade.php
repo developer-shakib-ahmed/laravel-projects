@@ -27,6 +27,12 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ url('/') }}/admin/assets/images/favicon.png" />
 
+    <!-- Scripts -->
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+
+    <!-- Styles -->
+    {{-- @livewireStyles --}}
+
   </head>
   <body>
     <div class="container-scroller">
@@ -54,6 +60,15 @@
                 <i class="mdi mdi-food-fork-drink"></i>
               </span>
               <span class="menu-title">Food Menu</span>
+            </a>
+          </li>          
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('chefs') }}">
+              <span class="menu-icon">
+                <i class="mdi mdi-food-fork-drink"></i>
+              </span>
+              <span class="menu-title">Chefs</span>
             </a>
           </li>          
         </ul>
@@ -188,6 +203,9 @@
     <!-- Custom js for this page -->
     <script src="{{ url('/') }}/admin/assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
+
+
+    {{-- @livewireScripts --}}
 
   </body>
 </html>

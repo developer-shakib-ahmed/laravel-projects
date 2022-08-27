@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChefController;
 use App\Http\Controllers\FoodMenuController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,8 @@ Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified'
 
     Route::prefix('dashboard')->group(function () {
         Route::get('/foodmenu', [FoodMenuController::class, 'show'])->name('foodmenu');
+
+        Route::get('/chefs', [ChefController::class, 'show'])->name('chefs');
     });
 
     Route::get('/cart', function () {

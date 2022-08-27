@@ -22,20 +22,29 @@
         }
       } else {
         //for other url
+
         if (element.attr('href').indexOf(current) !== -1) {
-          element.parents('.nav-item').last().addClass('active');
-          if (element.parents('.sub-menu').length) {
-            element.closest('.collapse').addClass('show');
-            element.addClass('active');
+
+          if( element.attr('href').indexOf('dashboard') === element.attr('href').indexOf(current)){
+            // $('.nav li.nav-item:first-child').addClass('active');
+            $('.nav li.nav-item').first().addClass('active');
           }
-          if (element.parents('.submenu-item').length) {
-            element.addClass('active');
+          else{
+            element.parents('.nav-item').last().addClass('active');
+            if (element.parents('.sub-menu').length) {
+              element.closest('.collapse').addClass('show');
+              element.addClass('active');
+            }
+            if (element.parents('.submenu-item').length) {
+              element.addClass('active');
+            }
           }
         }
       }
     }
 
     var current = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, '');
+
     $('.nav li a', sidebar).each(function() {
       var $this = $(this);
       addActiveClass($this);
@@ -105,19 +114,21 @@
           document.msExitFullscreen();
         }
       }
-    })
-    if ($.cookie('corona-free-banner')!="true") {
-      document.querySelector('#proBanner').classList.add('d-flex');
-    }
-    else {
-      document.querySelector('#proBanner').classList.add('d-none');
-    }
-    document.querySelector('#bannerClose').addEventListener('click',function() {
-      document.querySelector('#proBanner').classList.add('d-none');
-      document.querySelector('#proBanner').classList.remove('d-flex');
-      var date = new Date();
-      date.setTime(date.getTime() + 24 * 60 * 60 * 1000); 
-      $.cookie('corona-free-banner', "true", { expires: date });
     });
+
+    // if ($.cookie('corona-free-banner')!="true") {
+    //   document.querySelector('#proBanner').classList.add('d-flex');
+    // }
+    // else {
+    //   document.querySelector('#proBanner').classList.add('d-none');
+    // }
+    // document.querySelector('#bannerClose').addEventListener('click',function() {
+    //   document.querySelector('#proBanner').classList.add('d-none');
+    //   document.querySelector('#proBanner').classList.remove('d-flex');
+    //   var date = new Date();
+    //   date.setTime(date.getTime() + 24 * 60 * 60 * 1000); 
+    //   $.cookie('corona-free-banner', "true", { expires: date });
+    // });
+
   });
 })(jQuery);

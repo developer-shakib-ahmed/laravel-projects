@@ -5,23 +5,33 @@
   <div class="col-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title mb-4 pb-4">Add Food Menu</h3>
-        <form class="forms-sample" method="GET" action="{{ route('foodmenu') }}?add=foodmenu">
+        @if(session()->has('message'))
+          <div class="alert alert-success mb-4">
+            {{ session()->get('message') }}
+          </div>
+        @endif
+
+        <h3 class="card-title mb-4 pt-4 pb-4">Add Food Menu</h3>
+
+        <form class="forms-sample" method="GET" action="{{ route('foodmenu') }}">
           <input type="hidden" name="add" value="foodmenu">
           
           <div class="form-group">
-            <label for="food-menu-name">Food Menu Name</label>
-            <input type="text" class="form-control" id="food-menu-name" name="food-menu-name" placeholder="Enter food menu name">
+            <label for="name">Food Menu Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter food menu name">
+            @error('name')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
           </div>
 
           <div class="form-group">
-            <label for="food-menu-price">Food Menu Price</label>
-            <input type="text" class="form-control" id="food-menu-price" name="food-menu-price" placeholder="Enter food menu price">
+            <label for="price">Food Menu Price</label>
+            <input type="text" class="form-control" id="price" name="price" placeholder="Enter food menu price">
+            @error('price')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
           </div>
 
           <div class="form-group">
-            <label for="food-menu-desc">Food Menu Description</label>
-            <textarea class="form-control" id="food-menu-desc" name="food-menu-desc" placeholder="Enter food menu description"></textarea>
+            <label for="desc">Food Menu Description</label>
+            <textarea class="form-control" id="desc" name="desc" placeholder="Enter food menu description"></textarea>
+            @error('price')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
           </div>
 
           {{-- <div class="form-group">
